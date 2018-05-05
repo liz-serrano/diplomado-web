@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 /* Fonts */
+@import url("lib/fontawesome-all.min.css");
+@import url("lib/font-liz.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i");
 
 /* General */
@@ -14,6 +16,7 @@ body {
     margin: 0 auto;
 }
 img {
+    display: block;
     max-width: 100%;
 }
 ul, ol {
@@ -39,9 +42,92 @@ list-style-type: none;
 }
 
 /* Nav */
+.page-nav {
+    background-color: rgb(165, 6, 54);
+}
+
+.page-nav li {
+    float: left;
+}
+.page-nav a {
+    display:block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all .3s;
+    /*
+    transition: recibe una lista de propiedades a transicionar, 
+    cada propiedad de la lista debe tener especificado el tiempo de transición,
+    el cual puede ser en segundos (s) o milisegundos (ms) lo ideal son 300ms
+    le decimos a que propiedades va la acción, sintaxis:
+    transition: [nombre de la propiedad y  tiempo de transicion], ...;
+    transition: background-color 300ms;
+    transition: background-color .3s;
+    para el color de fuente:
+    transition: background-color .3s; color .5s;
+        transition: all .3s;
+    */
+}
+.page-nav a:hover {
+    background-color: rgb(219, 97, 97);
+    color: #fff;
+    /*font-size: 20px;*/
+}
+
+.page-nav .fa-search {
+    color: #ccc;
+    float: right;
+    margin: 10px 20px 0;
+    cursor: pointer;
+}
 
 /* Main */
+.page-main {
+    padding: 65px 0;
+}
+
+.page-main h2:first-child {
+    margin-top: 0;
+}
+
+/* Grid */
+.grid .col-left {
+    float: left;
+    width: 33.33%
+}
+.grid .col-right {
+    padding-left: 16px;
+    float: right;
+    width: 66.66%;
+    box-sizing: border-box;
+    /* box-sizing: valor por defecto "content-box"
+    content-box: ancho del contenido es únicamente el contenido,
+    es decir que los valores de "margin", "padding" y "border se
+    sumarán.
+    
+    border-box: ancho del contenido es la suma de "contenido + padding + border.
+    es decir, que los valores de "padding y "border" se toman del ancho establecido.
+    */
+}
 
 /* Footer */
+.page-footer {
+    background-color: #333;
+    padding: 16px 0;
+}
+
+.page-footer {
+    margin: 0;
+    text-align: center;
+    color: #ccc;
+}
 
 /* Helpers */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: block;
+}
+.clearfix:after {
+    clear: both; /* [both | left | right]*/
+}
